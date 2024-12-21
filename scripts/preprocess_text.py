@@ -45,12 +45,13 @@ for line in lines:
 
 # %% train
 
-write_lines_to_file('./data/train_arab.txt', new_lines_arabic)
-write_lines_to_file('./data/train_phon.txt', new_lines_phonetic)
-write_lines_to_file('./data/train_buckw.txt', new_lines_buckw)
-
+write_lines_to_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/train_arab.txt', new_lines_arabic)
+write_lines_to_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/train_phon.txt', new_lines_phonetic)
+write_lines_to_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/train_buckw.txt', new_lines_buckw)
+'''
 # %% test
 
-write_lines_to_file('./data/test_arab.txt', new_lines_arabic)
-write_lines_to_file('./data/test_phon.txt', new_lines_phonetic)
-write_lines_to_file('./data/test_buckw.txt', new_lines_buckw)
+write_lines_to_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/test_arab.txt', new_lines_arabic)
+write_lines_to_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/test_phon.txt', new_lines_phonetic)
+write_lines_to_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/test_buckw.txt', new_lines_buckw)
+'''
