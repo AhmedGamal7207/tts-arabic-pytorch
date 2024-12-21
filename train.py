@@ -104,11 +104,11 @@ def training_loop(model,
 
             if n_iter % config.n_save_states_iter == 0:
                 save_states(f'states.pth', model, optimizer,
-                            n_iter, epoch, config)
+                            n_iter, epoch, config, config)
 
             if n_iter % config.n_save_backup_iter == 0 and n_iter > 0:
                 save_states(f'states_{n_iter}.pth', model,
-                            optimizer, n_iter, epoch, config)
+                            optimizer, n_iter, epoch, config, config)
 
             n_iter += 1
 
