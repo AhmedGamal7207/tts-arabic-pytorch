@@ -15,8 +15,8 @@ def write_lines_to_file(path, lines, mode='w', encoding='utf-8'):
 # %%
 
 
-lines = read_lines_from_file('./data/train-orthographic-transcript.txt')
-#lines = read_lines_from_file('./data/test-orthographic-transcript.txt')
+lines = read_lines_from_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/train_buckwalter.txt')
+#lines = read_lines_from_file('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/test_buckwalter.txt')
 
 new_lines_arabic = []
 new_lines_phonetic = []

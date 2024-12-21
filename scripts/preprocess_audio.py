@@ -8,8 +8,8 @@ from tqdm import tqdm
 
 # %%
 
-wav_path = 'G:/data/arabic-speech-corpus/wav'
-wav_new_path = 'G:/data/arabic-speech-corpus/wav_new'
+wav_path = '/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/wavs'
+wav_new_path = '/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/new_wavs'
 
 sr_target = 22050
 silence_audio_size = 256 * 3
