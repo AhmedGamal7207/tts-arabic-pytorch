@@ -117,7 +117,7 @@ def training_loop(model,
         print(f"Validation loss: {val_loss}")
 
         save_states(f'states_{n_iter}.pth', model,
-                    optimizer, n_iter, epoch, config)
+                    optimizer, n_iter, epoch, config, config)
 
 
 def main():
@@ -141,10 +141,10 @@ def main():
     # datasets
     if config.cache_dataset:
         print('Caching datasets ...')
-    train_dataset = ArabDataset(config.train_labels, config.train_wavs_path,
-                                cache=config.cache_dataset)
-    test_dataset = ArabDataset(config.test_labels, config.test_wavs_path,
-                               cache=config.cache_dataset)
+    train_dataset = ArabDataset(config.train_labels, config.train_wavs_path)
+                                #,cache=config.cache_dataset)
+    test_dataset = ArabDataset(config.test_labels, config.test_wavs_path)
+                               #,cache=config.cache_dataset)
 
     # optional: balanced sampling
     sampler, shuffle, drop_last = None, True, True

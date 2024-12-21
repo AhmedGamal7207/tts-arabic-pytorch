@@ -1,0 +1,49 @@
+
+# restore_model: ''
+restore_model: ./pretrained/tacotron2_ar_mse.pth
+# restore_model: ./checkpoints/exp_tc2/states.pth
+
+log_dir: logs/exp_tc2
+checkpoint_dir: checkpoints/exp_tc2
+
+# dataset
+train_wavs_path: /content/tts-arabic-pytorch/Mini Arabic Youtube Videos/new_wavs
+train_labels: /content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/train_phon.txt
+
+test_wavs_path: /content/tts-arabic-pytorch/Mini Arabic Youtube Videos/new_wavs_test
+test_labels: /content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/test_phon.txt
+
+label_pattern: '"(?P<filename>.*)" "(?P<phonemes>.*)"'
+# label_pattern: (?P<arabic>.*)\|(?P<filestem>.*)
+
+# optimizers
+g_lr: 1.0e-3    # lr for AdamW optimizer (generator)
+g_beta1: 0.9     # beta1 for AdamW optimizer (generator)
+g_beta2: 0.999   # beta2 for AdamW optimizer (generator)
+
+n_save_states_iter: 10
+n_save_backup_iter: 1000
+
+
+epochs: 10
+decoder_max_step: 3000
+
+random_seed: False
+
+batch_size: 8
+learning_rate: 1.0e-3
+weight_decay: 1.0e-6
+grad_clip_thresh: 1.0
+
+cache_dataset: True
+use_cuda_if_available: True
+
+balanced_sampling: False
+
+# vocoder
+vocoder_state_path: pretrained/hifigan-asc-v1/hifigan-asc.pth
+vocoder_config_path: pretrained/hifigan-asc-v1/config.json
+
+# diacritizers
+shakkala_path: pretrained/diacritizers/shakkala_second_model6.pth
+shakkelha_path: pretrained/diacritizers/shakkelha_rnn_3_big_20.pth
