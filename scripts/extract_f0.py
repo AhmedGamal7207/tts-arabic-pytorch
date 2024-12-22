@@ -11,7 +11,7 @@ from utils import write_lines_to_file
 
 # %% CONFIG
 
-wavs_path = 'G:/data/arabic-speech-corpus/wav_new'
+wavs_path = '/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/new_wavs'
 
 waves = [f.path for f in os.scandir(wavs_path) if f.path.endswith('.wav')]
 print(f"{len(waves)} wave files found at {wavs_path}")
@@ -45,14 +45,14 @@ for i, wav_path in tqdm(enumerate(waves), total=len(waves)):
     pitch_dict[wav_name] = pitch_mel
 
     if i % 10 == 0: # save intermediate dict
-        torch.save(pitch_dict, './data/pitch_dict.pt')
+        torch.save(pitch_dict, '/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/pitch_dict.pt')
 
-torch.save(pitch_dict, './data/pitch_dict.pt')
+torch.save(pitch_dict, '/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/pitch_dict.pt')
 
 
 # %% calculate pitch mean and std
 
-pitch_dict = torch.load('./data/pitch_dict.pt')
+pitch_dict = torch.load('/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/pitch_dict.pt')
 
 rmean = 0
 rvar = 0
@@ -77,6 +77,6 @@ mean, std = rmean, np.sqrt(rvar)
 print('mean ', mean)
 print('std ', std)
 
-write_lines_to_file(path='./data/mean_std.txt', 
+write_lines_to_file(path='/content/tts-arabic-pytorch/Mini Arabic Youtube Videos/final_text_files/mean_std.txt', 
                     lines=[f"mean: {mean}", 
                            f"std: {std}"])
