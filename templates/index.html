@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTS Web App</title>
+    <script>
+        function resetToHome() {
+            window.location.href = "http://127.0.0.1:5000"; // Replace with your desired home URL
+        }
+    </script>
 </head>
 <body>
     <h1>Text-to-Speech Web App</h1>
@@ -19,6 +24,7 @@
         <textarea id="text" name="text" rows="4" cols="50"></textarea><br><br>
         
         <button type="submit">Execute</button>
+        <button type="button" onclick="resetToHome()">Reset</button>
     </form>
 
     {% if audio_url %}
