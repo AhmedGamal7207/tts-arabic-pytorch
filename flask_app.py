@@ -11,8 +11,8 @@ app = Flask(__name__)
 models = {
     "Pretrained Tacotron2 mse Model": Tacotron2Wave('pretrained/tacotron2_ar_mse.pth'),
     "Pretrained Tacotron2 adv Model": Tacotron2Wave('pretrained/tacotron2_ar_adv.pth'),
-    "Pretrained FastPitch mse Model": Tacotron2Wave('pretrained/fastpitch_ar_mse.pth'),
-    "Pretrained FastPitch adv Model": Tacotron2Wave('pretrained/fastpitch_ar_adv.pth'),
+    "Pretrained FastPitch mse Model": FastPitch2Wave('pretrained/fastpitch_ar_mse.pth'),
+    "Pretrained FastPitch adv Model": FastPitch2Wave('pretrained/fastpitch_ar_adv.pth'),
 
     "Our Tacotron2 12 Epoch": Tacotron2Wave('checkpoints/exp_tc2/states_450.pth'),
     "Our FastPitch 12 Epoch": FastPitch2Wave('checkpoints/exp_fp_adv/states.pth'),
